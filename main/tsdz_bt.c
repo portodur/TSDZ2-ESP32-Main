@@ -1248,9 +1248,9 @@ void cscp_bt_update(void) {
             cscpMsg[i++] = ((crank_revolutions>>8) & 0xff);
 
             // Crank revolution time (sec/1024) (60*1024/rmp)
-			if ( (crank_revolutions > last_crank_revs) && (tsdz_status.ui8_pedal_cadence_RPM > 0) ) {
+			if ( (crank_revolutions > last_crank_revs) && (tsdz_data.ui8_pedal_cadence_RPM > 0) ) {
 				// N. revs * 60/rpm * 1024
-				tmp = (crank_revolutions - last_crank_revs) * 61440 / tsdz_status.ui8_pedal_cadence_RPM;
+				tmp = (crank_revolutions - last_crank_revs) * 61440 / tsdz_data.ui8_pedal_cadence_RPM;
 				tmp += last_crank_time;
 				last_crank_time = tmp & 0xffff;
 			}
