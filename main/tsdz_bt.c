@@ -1233,7 +1233,7 @@ void cscp_bt_update(void) {
             // last Wheel revolution time (sec/1024)
 			if ( (wheel_revolutions > last_wheel_revs) && (tsdz_data.ui16_wheel_speed_x10 > 0) ) {
 				tmp = (wheel_revolutions - last_wheel_revs) * (uint32_t)tsdz_cfg.ui16_wheel_perimeter * 1024L
-						 / ((uint32_t)tsdz_status.ui16_wheel_speed_x10 * 1000L / 36L);
+						 / ((uint32_t)tsdz_data.ui16_wheel_speed_x10 * 1000L / 36L);
 				tmp += last_wheel_time;
 				last_wheel_time = tmp & 0xffff;
 			}
